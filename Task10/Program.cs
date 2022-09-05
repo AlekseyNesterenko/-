@@ -1,14 +1,14 @@
 ﻿//Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
 
 Console.Write("Введите целое трехзначное число: ");
-
+string Number = Console.ReadLine ();
 void SecondDigit ()
     {
         int DigitAbs;
-        bool DigitParse = int.TryParse(Console.ReadLine (), out DigitAbs);
+        bool DigitParse = int.TryParse(Number, out DigitAbs);
         if (DigitParse==true)
         {
-            DigitAbs= Math.Abs(DigitAbs);
+            DigitAbs = Math.Abs(DigitAbs);
             if(DigitAbs<100 | DigitAbs>=1000) 
             {
              Console.WriteLine("Нужно ввести целое трехначное число!");
@@ -26,5 +26,4 @@ void SecondDigit ()
         }
     }
    
-
 SecondDigit();
