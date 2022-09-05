@@ -13,9 +13,9 @@ void ThirdDigit ()
         else
         {
         while(num>999)
-        {
-        num = num/10; 
-        }
+            {
+            num = num/10; 
+            }
         int num1 = num % 10;
         Console.WriteLine($"Третья цифра в числе: {num1}"); 
         }
