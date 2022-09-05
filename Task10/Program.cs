@@ -1,23 +1,23 @@
 ﻿//Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
 
 Console.Write("Введите целое трехзначное число: ");
-string Number = Console.ReadLine ();
-void SecondDigit ()
+string number = Console.ReadLine ();
+void getSecondDigit ()
     {
-        int DigitAbs;
-        bool DigitParse = int.TryParse(Number, out DigitAbs);
-        if (DigitParse==true)
+        int digitAbs;
+        bool digitParse = int.TryParse(number, out digitAbs);
+        if (digitParse==true)
         {
-            DigitAbs = Math.Abs(DigitAbs);
-            if(DigitAbs<100 | DigitAbs>=1000) 
+            digitAbs = Math.Abs(digitAbs);
+            if(digitAbs<100 | digitAbs>=1000) 
             {
-             Console.WriteLine("Нужно ввести целое трехначное число!");
+                Console.WriteLine("Нужно ввести целое трехначное число!");
             }
             else
             {
-            int Digit = DigitAbs/10;
-            int SecDigit = Digit%10;
-            Console.Write($"Вторая цифра числа: {SecDigit}");
+                int digit = digitAbs/10;
+                int secDigit = digit%10;
+                Console.Write($"Вторая цифра числа: {secDigit}");
             }
         }
         else
@@ -26,4 +26,4 @@ void SecondDigit ()
         }
     }
    
-SecondDigit();
+getSecondDigit();
