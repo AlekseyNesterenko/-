@@ -1,12 +1,12 @@
 ﻿// Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
 
 Console.Write("Введите целое число: ");
-int num = Math.Abs(int.Parse(Console.ReadLine ()));
+int num = int.Parse(Console.ReadLine ());
 
-void SecondDigit ()
+void ThirdDigit ()
     {
-        
-        if (num>0 && num<100) 
+        num = Math.Abs(num);
+        if (num>=0 && num<100) 
         {
            Console.WriteLine("В числе нет третьей цифры."); 
         }
@@ -21,6 +21,6 @@ void SecondDigit ()
         }
     }
 
-SecondDigit();
+ThirdDigit();
 
 
