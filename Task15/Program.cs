@@ -2,14 +2,11 @@
 
 Console.Write("Введите число дня недели: ");
 int number = int.Parse(Console.ReadLine ());
-void DayOfWeek ()
+void getDayOfWeek ()
     {
-        
         if (number==7 | number== 6) Console.WriteLine("Ура, выходной!");
         else if (number>0 && number<6) Console.WriteLine("Нужно работать");
-        else Console.WriteLine("Это не день недели");
-        
+        else Console.WriteLine("Это не день недели");   
     }
    
-DayOfWeek();
-
+getDayOfWeek();
