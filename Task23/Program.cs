@@ -14,7 +14,7 @@ int[] GetCubes(int num)
 Console.Write("Input N: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine($"Таблица кубов от 1 до {num} ");
+Console.WriteLine($"Таблица кубов от 1 до {num}: ");
 int[] result = GetCubes(num);
 for (int i= 0; i < result.Length; i++) 
 {
