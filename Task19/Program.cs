@@ -16,7 +16,7 @@ void checkForPalindrome ()
             }
             else
             {
-                int a = fiveDigitsNum / 1000;                                 // получить первые две цирфы числа
+                int a = fiveDigitsNum / 1000;                                 // получить первые две цифры числа
                 int b = fiveDigitsNum % 10 * 10 + fiveDigitsNum % 100 / 10;   // получить две последние цифры числа
                 if (a == b)
                 {
