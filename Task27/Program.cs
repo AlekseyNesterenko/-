@@ -1,29 +1,32 @@
 ﻿// Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 
 
-int getSumNumberDigits(int number)
+int getNumberDigitsSum(int number)
 {
        int sum=0;
-       int count = 0;
        int tempNumber = Math.Abs(number);
         while (tempNumber > 0)
         {
             int lastDigit = tempNumber % 10;
             sum = sum + lastDigit;
-            count++;
+            tempNumber = tempNumber / 10;
         }
     return sum;
 }
 
-
-Console.WriteLine("Введите число: ");
-try
+while (true)
 {
-    int a = int.Parse(Console.ReadLine());
-    int digitsSum = getSumNumberDigits(a);
-    Console.WriteLine($"Сумма цифр в числе: {digitsSum}");
-}
-catch (Exception)
-{
-    Console.WriteLine($"Входное значение имеет неверный формат");
+    try
+    {
+        Console.Write("Введите число: ");
+        int a = int.Parse(Console.ReadLine());
+        int digitsSum = getNumberDigitsSum(a);
+        Console.WriteLine($"Сумма цифр в числе: {digitsSum}");
+        break;
+    }
+    catch (Exception)
+    {
+        Console.WriteLine($"Входное значение имеет неверный формат");
+ 
+    }
 }
