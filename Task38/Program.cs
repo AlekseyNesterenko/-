@@ -8,7 +8,7 @@ double[] FillArray( int size, int startValue, int endValue)
     var random = new Random();
     for(int i = 0; i<array.Length; i++)
     {
-        array[i] = Math.Round(random.NextSingle() * (endValue - startValue) + startValue, 3);
+        array[i] = Math.Round(random.NextDouble() * (endValue - startValue) + startValue, 3);
     }
     return array;
 }
