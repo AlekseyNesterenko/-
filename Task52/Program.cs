@@ -30,7 +30,6 @@ void PrintArray(int[,] array)
 double[] GetAverageInColumns(int[,] array)
 {
     double[] average = new double[array.GetLength(1)];
-    int k = 0;
     for (int i = 0; i < array.GetLength(1); i++)
     {
         double sum = 0;
@@ -38,8 +37,7 @@ double[] GetAverageInColumns(int[,] array)
         {
             sum += array[j, i];
         }
-        average[k] = sum / array.GetLength(0);
-        k++;
+        average[i] = sum / array.GetLength(0);
     }
     return average;
 }
