@@ -2,7 +2,7 @@
 // Найдите среднее арифметическое элементов в каждом столбце.
 
 
-int[,] CreateAndPrintArray(int m, int n)
+int[,] CreateArray(int m, int n)
 {
     int[,] array = new int[m, n];
     for (int i = 0; i < m; i++)
@@ -10,27 +10,36 @@ int[,] CreateAndPrintArray(int m, int n)
         for (int j = 0; j < n; j++)
         {
             array[i, j] = new Random().Next(-10, 11);
-            Console.Write($"{array[i,j]} ");
         }
-        Console.WriteLine();
     }
     return array;
 }
 
-int[] GetAverageColumns (int[,] array, int m, int n)
+void PrintArray(int[,] array)
 {
-    int[] average = new int[n];
-    for(int k = 0; k<average.Length; k++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        int sum = 0;
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            sum += array[m,n];
+            Console.Write($"{array[i, j]}   ");
         }
-        average[k]= sum / m;
+        Console.WriteLine();
     }
+}
+
+double[] GetAverageInColumns(int[,] array)
+{
+    double[] average = new double[array.GetLength(1)];
+    int k = 0;
+    for (int i = 0; i < array.GetLength(1); i++)
+    {
+        double sum = 0;
+        for (int j = 0; j < array.GetLength(0); j++)
+        {
+            sum += array[j, i];
+        }
+        average[k] = sum / array.GetLength(0);
+        k++;
     }
     return average;
 }
@@ -62,7 +71,13 @@ else
     n = resultN;
 }
 
+int[,] Array = CreateArray(m, n);
+PrintArray(Array);
+Console.WriteLine();
 
-
-int[] columnsAverageSum = GetAverageColumns(CreateAndPrintArray(m,n));
-
+Console.WriteLine();
+double[] columnsAverageSum = GetAverageInColumns(Array);
+for (int i = 0; i < columnsAverageSum.Length; i++)
+{
+    Console.Write($"{columnsAverageSum[i]} ");
+}

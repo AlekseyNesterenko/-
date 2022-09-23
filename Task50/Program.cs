@@ -16,40 +16,34 @@ int[,] CreateArray(int m, int n)
     return array;
 }
 
+void PrintArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($"{array[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
 void FindArrayElement(int[,] array, int m, int n)
 {
-    if (m > array.GetLength(0) | n > array.GetLength(1))
+    if (m > array.GetLength(0) || n > array.GetLength(1))
     {
         Console.WriteLine("Такого элемента нет в массиве");
-        return;
     }
     else
     {
-        for (int i = 0; i < array.GetLength(0); i++)
-        {
-            for (int j = 0; j < array.GetLength(1); j++)
-            {
-                if( m == array.GetLength(0) && n == array.GetLength(1))
-                {
-                Console.WriteLine($"Элемент с иденксом [{m},{n}] равен {array[i, j]}");
-                }
-            }
-            break;
-        }
+        Console.WriteLine($"Элемент с иденксом [{m},{n}] равен {array[m, n]}");
     }
 }
 
 int rows = new Random().Next(2, 11);
 int columns = new Random().Next(2, 11);
 int[,] Array = CreateArray(rows, columns);
-for (int i = 0; i < rows; i++)
-{
-    for (int j = 0; j < columns; j++)
-    {
-        Console.Write($"{Array[i, j]} ");
-    }
-    Console.WriteLine();
-}
+PrintArray(Array);
 
 int m = 0; // строка
 int n = 0; // столбец
@@ -77,6 +71,7 @@ else
 {
     n = resultN;
 }
+
 
 FindArrayElement(Array, m, n);
 
