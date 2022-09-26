@@ -2,7 +2,7 @@
 
 int[,] CreateMatrix ()
 {
-	int random = new Random();
+	Random random = new Random();
 	int m = random.Next(1,5);
 	int n = random.Next(1,5);
 	int[,] matrix = new int[m, n];
@@ -20,9 +20,9 @@ int[,] CreateMatrix ()
 
 void PrintMatrix (int[,] array)
 {
-	for(int i = 0; i < matrix.GetLength(0); i++)
+	for(int i = 0; i < array.GetLength(0); i++)
 		{
-			for(int j = 0; j < matrix.GetLength(1); i++)
+			for(int j = 0; j < array.GetLength(1); i++)
 			{
 				Console.Write($"{array[i, j]}  ");
 			}
@@ -52,21 +52,21 @@ int[,] MultiplyMatrices (int[,] matrixA, int[,] matrixB)
 							result[,] = sumEl;						
 						}
 				}
-		{
+		}
 	return result;
 }
 
 
 Console.WriteLine("Матрица А: ");
-int[,] matrixA = CreateMatrix();
-PrintMatrix(matrixA);
+int[,] matrix1 = CreateMatrix();
+PrintMatrix(matrix1);
 Console.WriteLine();
 
 Console.WriteLine("Матрица Б: ");
-int[,] matrixB = CreateMatrix();
-PrintMatrix(matrixB);
+int[,] matrix2 = CreateMatrix();
+PrintMatrix(matrix2);
 Console.WriteLine();
 
 Console.WriteLine("А х Б: ");
-int[,] multResult = MultiplyMatrices(matrixA, matrixB);
+int[,] multResult = MultiplyMatrices(matrix1, matrix2);
 PrintMatrix(multResult);
