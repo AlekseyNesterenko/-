@@ -8,17 +8,18 @@ int[,,] CreateArray()
     int w = random.Next(2, 5);
     int l = random.Next(2, 5);
     int[,,] matrix = new int[h, w, l];
-    
+
     int[] randomNumbers = new int[matrix.GetLength(0) * matrix.GetLength(1) * matrix.GetLength(2)];
     for (int i = 0; i < randomNumbers.Length; i++)
     {
         randomNumbers[i] = random.Next(10, 100);
-        for (int index = 0; index <i; index ++)
+        for (int index = 0; index < i; index++)
         {
             int n = randomNumbers[index];
-            if (n == randomNumbers[i] ) 
+            if (n == randomNumbers[i])
             {
                 randomNumbers[i] = random.Next(10, 100);
+                index = 0;
             }
         }
     }
@@ -33,7 +34,7 @@ int[,,] CreateArray()
                 {
                     matrix[i, j, k] = randomNumbers[count++];
                 }
-                
+
             }
         }
     }
@@ -54,6 +55,8 @@ void PrintMatrix(int[,,] matrix)
 
     }
 }
+
+
 
 int[,,] array = CreateArray();
 Console.WriteLine($"Трехмерный массив array[{array.GetLength(0)}, {array.GetLength(1)}, {array.GetLength(2)}]: ");

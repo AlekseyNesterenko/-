@@ -3,13 +3,13 @@
 int[,] CreateMatrix ()
 {
 	Random random = new Random();
-	int m = random.Next(1,5);
-	int n = random.Next(1,5);
+	int m = random.Next(2,5);
+	int n = random.Next(2,5);
 	int[,] matrix = new int[m, n];
 	
 	for(int i = 0; i < m; i++)
 		{
-			for(int j = 0; j < n; i++)
+			for(int j = 0; j < n; j++)
 			{
 				matrix[i, j] = random.Next(1, 11);
 			}
@@ -22,7 +22,7 @@ void PrintMatrix (int[,] array)
 {
 	for(int i = 0; i < array.GetLength(0); i++)
 		{
-			for(int j = 0; j < array.GetLength(1); i++)
+			for(int j = 0; j < array.GetLength(1); j++)
 			{
 				Console.Write($"{array[i, j]}  ");
 			}
@@ -36,20 +36,21 @@ int[,] MultiplyMatrices (int[,] matrixA, int[,] matrixB)
 	
 	if(matrixA.GetLength(1) != matrixB.GetLength(0))
 		{
-			Console.WriteLine("Выполнить умножение невозможно!");	
+			Console.WriteLine("Выполнить умножение невозможно!");
+				
 		}
 	else
 		{
-			for(int i = 0; i < matrixB.GetLength(0); i++)
+			for(int i = 0; i < result.GetLength(0); i++)
 				{
-					for(int j = 0; j < matrixB.GetLength(0); i++)
+					for(int j = 0; j < result.GetLength(1); j++)
 						{
 							int sumEl = 0;
-							for( int k = 0; k < matrixA.GetLength(0); k++)
+							for( int k = 0; k < matrixA.GetLength(1); k++)
 								{
-									sumEl += matrixA[,] *matrixB[,];    // доделать
+									sumEl += matrixA[i,k] *matrixB[k,j];  
 								}
-							result[,] = sumEl;						
+							result[i,j] = sumEl;						
 						}
 				}
 		}
