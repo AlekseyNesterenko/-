@@ -51,7 +51,7 @@ void MultiplyMatrices (int[,] matrixA, int[,] matrixB)
 									sumEl += matrixA[i,k] *matrixB[k,j];  
 								}
 							result[i,j] = sumEl;
-						        Console.WriteLine(result[i,j]);
+						    Console.Write($"{result[i,j]} ");
 						}
 				Console.WriteLine();
 				}

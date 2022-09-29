@@ -4,8 +4,8 @@
 int[,] CreateMatrix()
 {
     Random random = new Random();
-    int m = random.Next(4, 5);
-    int n = random.Next(2, 3);
+    int m = random.Next(4, 6);
+    int n = random.Next(2, 4);
     int[,] matrix = new int[m, n];
 
     for (int i = 0; i < m; i++)
@@ -52,7 +52,7 @@ void PrintMaxSumPow (int[] array)
     int powNum = 0;
     for (int i = 1; i < array.Length; i++)
     {
-        if(array[i]<array[i-1]) 
+        if(array[i]< min)
         {
             min = array[i];
             powNum = i;
