@@ -30,7 +30,7 @@ void PrintMatrix (int[,] array)
 		}
 }			
 
-int[,] MultiplyMatrices (int[,] matrixA, int[,] matrixB)
+void MultiplyMatrices (int[,] matrixA, int[,] matrixB)
 {
 	int[,] result = new int[matrixA.GetLength(0),matrixB.GetLength(1)];
 	
@@ -50,11 +50,12 @@ int[,] MultiplyMatrices (int[,] matrixA, int[,] matrixB)
 								{
 									sumEl += matrixA[i,k] *matrixB[k,j];  
 								}
-							result[i,j] = sumEl;						
+							result[i,j] = sumEl;
+						        Console.WriteLine(result[i,j]);
 						}
+				Console.WriteLine();
 				}
 		}
-	return result;
 }
 
 
@@ -69,5 +70,5 @@ PrintMatrix(matrix2);
 Console.WriteLine();
 
 Console.WriteLine("А х Б: ");
-int[,] multResult = MultiplyMatrices(matrix1, matrix2);
-PrintMatrix(multResult);
+MultiplyMatrices(matrix1, matrix2);
+
