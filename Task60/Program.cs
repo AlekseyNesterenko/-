@@ -57,7 +57,6 @@ void PrintMatrix(int[,,] matrix)
 }
 
 
-
 int[,,] array = CreateArray();
 Console.WriteLine($"Трехмерный массив array[{array.GetLength(0)}, {array.GetLength(1)}, {array.GetLength(2)}]: ");
 PrintMatrix(array);
